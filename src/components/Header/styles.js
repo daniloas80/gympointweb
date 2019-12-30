@@ -21,7 +21,7 @@ export const Content = styled.div`
         }
         a {
             font-weight: bold;
-            color: #444;
+            color: #999999;
             margin-right: 15px;
         }
     }
