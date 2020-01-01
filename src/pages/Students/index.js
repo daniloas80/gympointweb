@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { MdAdd } from 'react-icons/md';
 import axios from 'axios';
 // import api from '../../services/api';
-import history from '../../services/history';
+import history from '~/services/history';
 
 import { Container } from './styles';
 

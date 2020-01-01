@@ -23,10 +23,16 @@ module.exports = {
     },
     plugins: [
       'react',
-      'prettier'
+      'prettier',
+      'import',
+      "jsx-a11y",
     ],
     rules: {
       'prettier/prettier': 'error',
+      "react/prop-types": "off",
+      "react/no-typos": "off",
+      "no-param-reassign": "off",
+      "react/jsx-props-no-spreading": "off",
       'react/jsx-filename-extension': [
           'warn',
           {
@@ -36,4 +42,12 @@ module.exports = {
       'import/prefer-default-export': 'off',
       'no-console': ["error", { allow: ["tron"]}]
     },
+    settings: {
+        'import/resolver': {
+            'babel-plugin-root-import': {
+                'rootPathPrefix': '~',
+                'rootPathSuffix': 'src'
+          },
+        },
+      },
   };
