@@ -5,6 +5,7 @@ import Route from './Route';
 import SignIn from '~/pages/Auth/SignIn';
 import Home from '~/pages/Home';
 import Students from '~/pages/Students';
+import StudentsForm from '../pages/Students/form';
 
 export default function Routes() {
     return (
@@ -12,6 +13,12 @@ export default function Routes() {
             <Route path="/signin" exact component={SignIn} />
             <Route path="/" exact component={Home} isPrivate />
             <Route path="/students" exact component={Students} isPrivate />
+            <Route
+                path="/students/studentsform"
+                exact
+                component={StudentsForm}
+                isPrivate
+            />
 
             <Route path="/" component={() => <h1>404</h1>} />
         </Switch>

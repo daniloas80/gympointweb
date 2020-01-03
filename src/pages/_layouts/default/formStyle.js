@@ -1,89 +1,75 @@
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
 
-export const Wrapper = styled.div`
-    min-height: 100%;
-    height: auto;
-    background: #f5f5f5;
-    padding-bottom: 20px;
-`;
-
-export const Content = styled.div`
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 0 50px;
-    display: flex;
-    flex-direction: column;
-    h1 {
-        font-size: 24px;
-        color: #444;
-    }
-    h2 {
-        color: #777;
-        margin-top: 4px;
-    }
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 30px 5px 30px;
-        aside {
-            display: flex;
-            align-items: center;
-        }
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 10px;
-            border: 0;
-            height: 35px;
-            min-width: 110px;
-            width: auto;
-            background: #ee4d64;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #fff;
-            font-weight: bold;
-            margin-right: 10px;
-            &:hover {
-                background: ${darken(0.1, '#ee4d64')};
-            }
-            &.greyButton {
-                background: transparent;
-                border: 1px solid #ee4d64;
-                color: #ee4d64;
-                &:hover {
-                    background: ${lighten(0.35, '#ee4d64')};
-                }
-            }
-        }
-        input {
-            height: 35px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            color: rgba(0, 0, 0, 0.5);
-            padding: 0 5px;
-            &::placeholder {
-                color: rgba(0, 0, 0, 0.5);
-            }
-        }
-        strong {
-            font-size: 24px;
-            color: #fff;
-            margin: 0 13px;
-        }
-    }
+export const FormDefault = styled.div`
     div {
         background: #f5f5f5;
         padding: 20px;
-        margin-top: 10px;
+        margin-top: -60px;
         border-radius: 4px;
+        align-items: center;
         form {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-top: 5px;
+            margin-top: 10px;
+
+            header {
+                background: #f5f5f5;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+                align-items: baseline;
+                padding: 0;
+                margin: 0;
+                aside {
+                    display: flex;
+                    align-items: center;
+                }
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 10px;
+                    border: 0;
+                    height: 35px;
+                    min-width: 110px;
+                    width: auto;
+                    background: #ee4d64;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    color: #fff;
+                    font-weight: bold;
+                    margin-right: 10px;
+                    &:hover {
+                        background: ${darken(0.1, '#ee4d64')};
+                    }
+                    &.greyButton {
+                        background: #cccccc;
+                        border: 1px solid #a9a9a9;
+                        color: #fff;
+                        &:hover {
+                            background: ${lighten(0.2, '#a9a9a9')};
+                        }
+                    }
+                }
+                input {
+                    height: 35px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    color: rgba(0, 0, 0, 0.5);
+                    padding: 0 5px;
+                    &::placeholder {
+                        color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+                strong {
+                    font-size: 24px;
+                    color: #fff;
+                    margin: 0 13px;
+                }
+            }
             p {
                 margin: 8px 0 16px 0;
                 font-size: 16px;
@@ -160,17 +146,22 @@ export const Content = styled.div`
                 }
             }
             div {
+                background: #fff;
                 display: flex;
-                flex-direction: row;
-                width: 100%;
-                margin: 0;
-                padding: 0;
+                flex-direction: column;
+                margin-top: 15px;
+                padding: 30px 30px 0 30px;
                 justify-content: space-between;
                 & div:not(:first-child) {
                     margin-left: 15px;
                 }
                 div {
-                    display: inline-block;
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    margin: 0 5px 0 -5px;
+                    padding: 0;
+                    justify-content: space-evenly;
                 }
                 label {
                     display: block;
@@ -183,9 +174,9 @@ export const Content = styled.div`
             span {
                 color: #f27894;
                 align-self: flex-start;
-                margin-left: 0px;
                 font-size: 12px;
                 font-weight: bold;
+                margin-bottom: 15px;
             }
             button {
                 margin: 25px 0 0;
@@ -226,48 +217,6 @@ export const Content = styled.div`
                 opacity: 0.8;
                 &:hover {
                     opacity: 1;
-                }
-            }
-        }
-        table {
-            background: #fff;
-            width: 100%;
-            max-width: 850px;
-            border-spacing: 0px;
-            margin: auto;
-            padding: 20px;
-            thead {
-                td {
-                    color: #333;
-                    font-weight: bold;
-                    font-size: 14px;
-                    &.center {
-                        text-align: center;
-                    }
-                }
-            }
-            & td:not(:first-child) {
-                text-align: center;
-            }
-            & td:nth-child(2):last-child {
-                text-align: right;
-            }
-            td {
-                border-bottom: 1px solid #ddd;
-                padding: 15px 0;
-                color: #777;
-                font-size: 14px;
-                button {
-                    border: 0;
-                    background: 0;
-                    font-size: 14px;
-                    &.blueMinimalButton {
-                        color: #298dba;
-                    }
-                    &.redMinimalButton {
-                        color: #ee4d64;
-                        margin-left: 5px;
-                    }
                 }
             }
         }

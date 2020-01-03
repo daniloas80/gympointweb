@@ -17,3 +17,16 @@ export function signFailure() {
         type: '@auth/SIGN_FAILURE',
     };
 }
+
+export function signOutRequest(token) {
+    return {
+        type: '@auth/SIGN_OUT_REQUEST',
+        payload: token,
+    };
+}
+
+export function signOut() {
+    return {
+        type: '@auth/SIGN_OUT',
+    };
+}

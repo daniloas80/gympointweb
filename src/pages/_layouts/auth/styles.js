@@ -32,17 +32,17 @@ export const Content = styled.div`
             border-radius: 3px;
             border: 1px solid rgba(0, 0, 0, 0.3);
             background-color: 1px solid rgba(0, 0, 0, 0.1);
-            color: #9999;
+            color: 1px solid rgba(0, 0, 0, 0.3);
             margin: 8px 20px 0 20px;
             transition: border 0.15s ease;
             font-size: 16px;
 
             &:focus {
-                border-color: #7289da;
+                border-color: #ee4d64;
             }
 
             &::placeholder {
-                color: rgba(0, 0, 0, 0.3);
+                color: #9999;
             }
         }
 

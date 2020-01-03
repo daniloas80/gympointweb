@@ -1,14 +1,7 @@
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
 
-export const Wrapper = styled.div`
-    min-height: 100%;
-    height: auto;
-    background: #f5f5f5;
-    padding-bottom: 20px;
-`;
-
-export const Content = styled.div`
+export const Container = styled.div`
     max-width: 1000px;
     margin: 30px auto;
     padding: 0 50px;
@@ -26,7 +19,6 @@ export const Content = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 30px 5px 30px;
         aside {
             display: flex;
             align-items: center;
@@ -75,15 +67,15 @@ export const Content = styled.div`
         }
     }
     div {
-        background: #f5f5f5;
+        background: #fff;
         padding: 20px;
-        margin-top: 10px;
+        margin-top: 15px;
         border-radius: 4px;
         form {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-top: 5px;
+            margin-top: 10px;
             p {
                 margin: 8px 0 16px 0;
                 font-size: 16px;
@@ -230,12 +222,9 @@ export const Content = styled.div`
             }
         }
         table {
-            background: #fff;
             width: 100%;
             max-width: 850px;
             border-spacing: 0px;
-            margin: auto;
-            padding: 20px;
             thead {
                 td {
                     color: #333;

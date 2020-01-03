@@ -48,7 +48,7 @@ export const Form = styled.form`
         }
 
         &::placeholder {
-            color: rgba(0, 0, 0, 0.3);
+            color: 1px solid rgba(0, 0, 0, 0.1);
         }
     }
 
