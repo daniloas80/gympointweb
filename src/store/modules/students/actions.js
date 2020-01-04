@@ -46,3 +46,23 @@ export function studentFailure() {
         type: '@student/STUDENT_FAILURE',
     };
 }
+
+export function studentDeleteRequest(id) {
+    return {
+        type: '@student/DELETE_STUDENT_REQUEST',
+        payload: { id },
+    };
+}
+
+export function studentDeleteSuccess(id) {
+    return {
+        type: '@student/DELETE_STUDENT_SUCCESS',
+        payload: { id },
+    };
+}
+
+export function studentDeleteFailure() {
+    return {
+        type: '@student/DELETE_STUDENT_FAILURE',
+    };
+}

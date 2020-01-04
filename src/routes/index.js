@@ -6,6 +6,8 @@ import SignIn from '~/pages/Auth/SignIn';
 import Home from '~/pages/Home';
 import Students from '~/pages/Students';
 import StudentsForm from '../pages/Students/form';
+import Plans from '~/pages/Plans';
+import PlansForm from '../pages/Plans/form';
 
 export default function Routes() {
     return (
@@ -17,6 +19,13 @@ export default function Routes() {
                 path="/students/studentsform"
                 exact
                 component={StudentsForm}
+                isPrivate
+            />
+            <Route path="/plans" exact component={Plans} isPrivate />
+            <Route
+                path="/plans/plansform"
+                exact
+                component={PlansForm}
                 isPrivate
             />
 

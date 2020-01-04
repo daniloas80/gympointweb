@@ -99,8 +99,43 @@ export function* studentUpdate({ payload }) {
     }
 }
 
+export function* studentDelete({ payload }) {
+    const studentId = payload.id;
+    try {
+        const response = yield call(
+            api.delete,
+            `students/${studentId}`,
+            studentId
+        );
+
+        const student = response.data;
+
+        yield put(studentSuccess(student));
+        // toast.success('Registro apagado com sucesso', {
+        //     position: 'top-right',
+        //     autoClose: 5000,
+        //     hideProgressBar: false,
+        //     closeOnClick: true,
+        //     pauseOnHover: false,
+        //     draggable: false,
+        // });
+        // history.push('/');
+    } catch (err) {
+        toast.error('Erro ao tentar apagar os dados', {
+            position: 'top-center',
+            autoClose: false,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+        });
+        yield put(studentFailure());
+    }
+}
+
 export default all([
     takeLatest('@student/ADD_STUDENT_REQUEST', studentCreate),
     takeLatest('@student/UPDATE_STUDENT_REQUEST', studentUpdateRequest),
     takeLatest('@student/UPDATE_STUDENT', studentUpdate),
+    takeLatest('@student/DELETE_STUDENT_REQUEST', studentDelete),
 ]);

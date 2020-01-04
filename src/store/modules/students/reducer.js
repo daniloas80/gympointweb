@@ -41,7 +41,20 @@ export default function student(state = INITIAL_STATE, action) {
                 draft.loading = false;
                 break;
             }
-
+            case '@student/DELETE_STUDENT_REQUEST': {
+                draft.student = action.payload.id;
+                draft.loading = true;
+                break;
+            }
+            case '@student/DELETE_STUDENT_SUCCESS': {
+                draft.student = action.payload.id;
+                draft.loading = false;
+                break;
+            }
+            case '@student/DELETE_STUDENT_FAILURE': {
+                draft.loading = false;
+                break;
+            }
             default: // O default desta condicional de switch() não precisa retornar algo
         }
     });

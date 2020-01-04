@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { MdAdd } from 'react-icons/md';
 
+// import swal from 'react-bootstrap-sweetalert';
+import swal from '@sweetalert/with-react';
 import { updateStudentRequest } from '~/store/modules/students/actions';
 
 import api from '~/services/api';
@@ -29,6 +31,46 @@ export default function Students() {
         dispatch(updateStudentRequest(response.data));
         history.push(`students/${page}`);
     }
+    // async function willDelete(studentId) {
+    //     // await api.delete(`students/${studentId}`);
+    //     swal('Registro apagado com sucesso!', {
+    //         icon: 'success',
+    //     });
+    //     return true;
+    // }
+
+    async function willDeleteRecord(studentId) {
+        // const response = await api.delete(`students/${studentId}`);
+        // Tentei usar o redux para a função de deletar. Está funcionando bem,
+        // porém não consigo utilizar o método callback() abaixo.
+        // Precisa fazer uma melhoria jogando este método para dentro de um if que deverá
+        // vir logo abaixo da chama willDeleteR(studentId); onde preciso validar se o delete
+        // foi bem sucedido ou não.
+        // dispatch(studentDeleteRequest(studentId));
+        // console.tron.log(response.status);
+
+        await api.delete(`students/${studentId}`);
+        callback();
+    }
+
+    function deleteItem(studentId) {
+        swal({
+            title: 'Você deseja realmenete apagar o registro?',
+            // text:
+            //     'Once deleted, you will not be able to recover this imaginary file!',
+            //  icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+        }).then(willDelete => {
+            if (willDelete) {
+                willDeleteRecord(studentId);
+
+                swal('Registro apagado com sucesso.', {
+                    icon: 'success',
+                });
+            }
+        });
+    }
 
     return (
         <>
@@ -40,7 +82,7 @@ export default function Students() {
                     </button>
                     <input
                         type="text"
-                        /* onChange={event => loadStudents(event.target.value)} */
+                        onChange={event => loadStudents(event.target.value)}
                         placeholder="Procurar aluno"
                         name="procurar"
                         id="procurar"
@@ -78,15 +120,9 @@ export default function Students() {
                                     </button>
                                     <button
                                         type="button"
-                                        //   onClick={() =>
-                                        //     deleteItem(
-                                        //         `cadastro do aluno ${student.name}`,
-                                        //         student.id,
-                                        //         dispatch,
-                                        //         'students',
-                                        //         callback
-                                        //     )
-                                        //     }
+                                        onClick={() =>
+                                            deleteItem(`${student.id}`)
+                                        }
                                         className="redMinimalButton"
                                     >
                                         apagar
