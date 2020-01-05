@@ -33,6 +33,7 @@ module.exports = {
       "react/no-typos": "off",
       "no-param-reassign": "off",
       "react/jsx-props-no-spreading": "off",
+      "camelcase": "off",
       'react/jsx-filename-extension': [
           'warn',
           {

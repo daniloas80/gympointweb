@@ -8,6 +8,7 @@ import Students from '~/pages/Students';
 import StudentsForm from '../pages/Students/form';
 import Plans from '~/pages/Plans';
 import PlansForm from '../pages/Plans/form';
+import HelpOrders from '~/pages/HelpOrders';
 
 export default function Routes() {
     return (
@@ -28,6 +29,7 @@ export default function Routes() {
                 component={PlansForm}
                 isPrivate
             />
+            <Route path="/help-orders" exact component={HelpOrders} isPrivate />
 
             <Route path="/" component={() => <h1>404</h1>} />
         </Switch>

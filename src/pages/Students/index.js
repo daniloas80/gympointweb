@@ -93,8 +93,8 @@ export default function Students() {
                 <table>
                     <thead>
                         <tr>
-                            <th>NOME</th>
-                            <th>EMAIL</th>
+                            <th style={{ textAlign: 'left' }}>NOME</th>
+                            <th style={{ textAlign: 'left' }}>EMAIL</th>
                             <th>IDADE</th>
                             <th>AÇÕES</th>
                         </tr>
@@ -103,7 +103,9 @@ export default function Students() {
                         {students.map(student => (
                             <tr key={student.id}>
                                 <td>{student.name}</td>
-                                <td>{student.email}</td>
+                                <td style={{ textAlign: 'left' }}>
+                                    {student.email}
+                                </td>
                                 <td>{student.age}</td>
                                 <td>
                                     <button

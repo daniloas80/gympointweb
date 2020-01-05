@@ -92,7 +92,7 @@ export default function Plans() {
                 <table>
                     <thead>
                         <tr>
-                            <th>TÍTULO</th>
+                            <th style={{ textAlign: 'left' }}>TÍTULO</th>
                             <th>DURAÇÃO</th>
                             <th>VALOR P/ MÊS</th>
                             <th>AÇÕES</th>

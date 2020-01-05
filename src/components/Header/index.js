@@ -35,10 +35,10 @@ export default function Header() {
                         MATRÍCULAS
                     </NavLink>
                     <NavLink
-                        to="/helporders"
+                        to="/help-orders"
                         activeStyle={{ color: '#2F3235' }}
                     >
-                        PEDIDOS DE AJUDA
+                        PEDIDOS DE AUXÍLIO
                     </NavLink>
                 </nav>
 
